@@ -17,13 +17,19 @@ var UIController = (function(){
 
 var controller = (function(budgetCtrl, UICtrl){
 	
-	document.querySelector('.add__btn').addEventListener('click', function(){
+	var ctrlAddItem = function(){
+     console.log('It works');
+	};
+		document.querySelector('.add__btn').addEventListener('click', ctrlAddItem);
 		
-	});
+	
 	
 	document.addEventListener('keypress', function(event){
 							  
-			console.log(event);				  });
+			if (event.keyCode === 13 || event.which === 13){
+				ctrlAddItem();
+			}			  
+	});
 	
 })(budgetController, UIController);
 
