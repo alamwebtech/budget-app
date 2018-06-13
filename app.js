@@ -9,7 +9,18 @@ var budgetController = (function(){
 // UI CONTROLLER
 var UIController = (function(){
 	
-	// some code
+   return {
+	   getInput: function(){
+		   
+		   return{
+			    type: document.querySelector('.add__type').value,
+		   description: document.querySelector('.add__description').value,
+		   value: document.querySelector('.add__value').value,
+           }
+		  
+	   }
+   };
+	
 })();
 
 
@@ -18,7 +29,14 @@ var UIController = (function(){
 var controller = (function(budgetCtrl, UICtrl){
 	
 	var ctrlAddItem = function(){
-     console.log('It works');
+		
+		// 1. Get the field input Data
+		var input = UICtrl.getInput();
+		console.log(input);
+		
+		
+		
+		
 	};
 		document.querySelector('.add__btn').addEventListener('click', ctrlAddItem);
 		
